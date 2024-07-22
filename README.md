@@ -1,5 +1,22 @@
 # MambaHSI: Spatial-Spectral Mamba for Hyperspectral Image Classification
+<div align="center">
 
+[Yapeng Li](https://scholar.google.com/citations?user=kkuoU8oAAAAJ&hl=zh-CN), [Yong Luo](https://scholar.google.com/citations?user=zb1oVGIAAAAJ&hl=zh-CN&oi=ao), [Lefei Zhang](https://scholar.google.com/citations?user=BLKHwNwAAAAJ&hl=zh-CN&oi=ao), [Zengmao Wang*](https://scholar.google.com/citations?user=tTqiJpQAAAAJ&hl=zh-CN&oi=ao), [Bo Du*](https://scholar.google.com/citations?user=Shy1gnMAAAAJ&hl=zh-CN)
+
+</div>
+
+<div align="center">
+<a href='https://ieeexplore.ieee.org/abstract/document/10604894'><img src='https://img.shields.io/badge/TGRS-Paper-blue'></a>
+
+</div>
+
+## 📝 Introduction
+<div align="center">
+<img src="./images/Motivation.png" alt="Motivation" width="55%">
+</div>
+
+* To our best knowledge, the MambaHSI is **the first image-level hyperspectral image classification model based on SSM**, which can simultaneously model long-range interaction of whole image and integrate spatial and spectral image information.
+* MambaHSI demonstrates **the great potential of Mamba to be the next-generation backbone for hyperspectral image models**.
 
 ## 🚀 Getting Started
 
@@ -48,9 +65,38 @@ python train_MambaHSI.py --dataset_index 2
 python train_MambaHSI.py --dataset_index 3
 ```
 
+## 🎖️ Main Results
+<details open>
+<summary><font size="4">
+Pavia University Results
+</font></summary>
+<img src="./images/PaviaU_results.png" alt="PaviaU" width="100%">
+</details>
+
+<details open>
+<summary><font size="4">
+Houston Results
+</font></summary>
+<img src="./images/Houston_results.png" alt="Houston" width="100%">
+</details>
+
+<details open>
+<summary><font size="4">
+HanChuan Results
+</font></summary>
+<img src="./images/HanChuan_results.png" alt="HanChuan" width="100%">
+</details>
+
+<details open>
+<summary><font size="4">
+HongHu Results
+</font></summary>
+<img src="./images/HongHu_results.png" alt="HongHu" width="100%">
+</details>
+
 ## Citation	
 
-If you use our work in your research, please cite: 
+If you find this project helpful for your research, please kindly consider citing our paper and give this repo ⭐️: 
 
 ```
 @ARTICLE{MambaHSI_TGRS24,
@@ -58,11 +104,11 @@ If you use our work in your research, please cite:
   journal={IEEE Transactions on Geoscience and Remote Sensing}, 
   title={MambaHSI: Spatial-Spectral Mamba for Hyperspectral Image Classification}, 
   year={2024},
-  volume={62},
+  volume={},
   number={},
   pages={1-16},
-  keywords={Hyperspectral Image Classification; Mamba; State Space Models; Transformer},
-  }
+  keywords={Hyperspectral Image Classification;Mamba;State Space Models;Transformer},
+  doi={10.1109/TGRS.2024.3430985}}
 ```
 
 ## Acknowledgement
