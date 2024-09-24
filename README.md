@@ -31,6 +31,7 @@ pip install triton==2.2.0
 pip install mamba-ssm==1.2.0
 pip install spectral
 pip install scikit-learn==1.4.1.post1
+pip install calflops==0.3.2
 ```
 
 ### Data Preparation

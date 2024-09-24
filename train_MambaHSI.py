@@ -18,6 +18,7 @@ from utils.visual_predict import visualize_predict
 from PIL import Image
 from model.MambaHSI import MambaHSI
 
+from calflops import calculate_flops
 
 torch.autograd.set_detect_anomaly(True)
 
@@ -50,6 +51,7 @@ def get_parser():
     parser.add_argument('--train_samples', type=int, default=30)
     parser.add_argument('--val_samples', type=int, default=10)
     parser.add_argument('--exp_name', type=str, default='RUNS')
+    parser.add_argument('--record_computecost',type=bool,default=True)
 
     args = parser.parse_args()
     return args
@@ -57,10 +59,10 @@ def get_parser():
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 args = get_parser()
-
+record_computecost = args.record_computecost
 exp_name = args.exp_name
-# seed_list = [0,1,2,3,4,5,6,7,8,9]  #
-seed_list = [0]  #
+seed_list = [0,1,2,3,4,5,6,7,8,9]  #
+# seed_list = [0]  #
 
 num_list = [args.train_samples, args.val_samples]
 
@@ -189,6 +191,11 @@ if __name__ == '__main__':
 
         logger.info(optimizer)
         best_loss = 99999
+        if record_computecost:
+            net.eval()
+            flops, macs1, para = calculate_flops(model=net,
+                                                 input_shape=(1, x.shape[1], x.shape[2], x.shape[3]), )
+            logger.info("para:{}\n,flops:{}".format(para, flops))
 
         tic1 = time.perf_counter()
         best_val_acc = 0
