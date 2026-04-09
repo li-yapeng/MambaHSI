@@ -329,7 +329,7 @@ if __name__ == '__main__':
             OA_test = test_evaluator.Pixel_Accuracy()
             mIOU_test, IOU_test = test_evaluator.Mean_Intersection_over_Union()
             mAcc_test, Acc_test = test_evaluator.Pixel_Accuracy_Class()
-            Kappa_test = evaluator.Kappa()
+            Kappa_test = test_evaluator.Kappa()
             logger.info('Test {}|OA:{}|MACC:{}|Kappa:{}|MIOU:{}|IOU:{}|ACC:{}'.format(epoch, OA_test, mAcc_test, Kappa_test, mIOU_test, IOU_test,
                                                                                     Acc_test))
             vis_a_image(gt, predict_test, predict_save_path, gt_save_path)
